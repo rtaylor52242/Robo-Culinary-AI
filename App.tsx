@@ -9,6 +9,8 @@ import ShoppingList from './components/ShoppingList';
 import Sidebar from './components/Sidebar';
 import Spinner from './components/Spinner';
 import { ChefHatIcon } from './components/icons/ChefHatIcon';
+import HelpDialog from './components/HelpDialog';
+import { QuestionMarkIcon } from './components/icons/QuestionMarkIcon';
 
 type View = 'upload' | 'recipes' | 'cooking' | 'shopping';
 
@@ -27,6 +29,7 @@ const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [currentView, setCurrentView] = useState<View>('upload');
+  const [isHelpOpen, setIsHelpOpen] = useState<boolean>(false);
   
   const handleImageUpload = async (imageDataUrl: string) => {
     setUploadedImage(imageDataUrl);
@@ -107,7 +110,15 @@ const App: React.FC = () => {
         onNewAnalysis={resetApp}
         isAnalysisDone={currentView !== 'upload'}
       />
-      <main className="flex-1 p-4 sm:p-6 md:p-8 overflow-y-auto">
+      <main className="flex-1 p-4 sm:p-6 md:p-8 overflow-y-auto relative">
+        <button
+          onClick={() => setIsHelpOpen(true)}
+          className="absolute top-4 right-4 z-10 p-2 bg-gray-700 rounded-full text-gray-300 hover:bg-gray-600 hover:text-white transition-colors"
+          aria-label="Open help dialog"
+        >
+          <QuestionMarkIcon />
+        </button>
+
         {currentView === 'upload' && (
           <ImageUploader onImageUpload={handleImageUpload} isLoading={isLoading} />
         )}
@@ -140,6 +151,7 @@ const App: React.FC = () => {
           <ShoppingList list={shoppingList} onRemove={handleRemoveFromShoppingList} />
         )}
       </main>
+      <HelpDialog isOpen={isHelpOpen} onClose={() => setIsHelpOpen(false)} />
     </div>
   );
 };
