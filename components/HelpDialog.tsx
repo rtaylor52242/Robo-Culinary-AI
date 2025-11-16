@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { XIcon } from './icons/XIcon';
 
@@ -30,7 +29,7 @@ const HelpDialog: React.FC<HelpDialogProps> = ({ isOpen, onClose }) => {
         </button>
 
         <h2 className="text-2xl md:text-3xl font-bold text-green-400 mb-6">
-          How to Use Robo Culinary AI
+          How to Use Robo AI - Culinary Tool
         </h2>
 
         <div className="space-y-4 text-gray-300">

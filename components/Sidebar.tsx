@@ -2,7 +2,7 @@ import React from 'react';
 import { DietaryFilters } from '../types';
 import { ShoppingCartIcon } from './icons/ShoppingCartIcon';
 import { BookOpenIcon } from './icons/BookOpenIcon';
-import { ChefHatIcon } from './icons/ChefHatIcon';
+import { RoboChefIcon } from './icons/RoboChefIcon';
 
 type View = 'upload' | 'recipes' | 'cooking' | 'shopping';
 
@@ -66,8 +66,8 @@ const Sidebar: React.FC<SidebarProps> = ({ filters, onFilterChange, currentView,
     <aside className="w-full md:w-72 bg-gray-900 p-6 flex-shrink-0 flex flex-col gap-8 border-b-2 md:border-b-0 md:border-r-2 border-gray-700">
       <div>
         <h1 className="text-2xl font-bold text-white flex items-center gap-2 mb-6">
-          <ChefHatIcon className="text-green-400" />
-          Robo Culinary AI
+          <RoboChefIcon className="text-green-400" />
+          Robo AI - Culinary Tool
         </h1>
         <button
           onClick={onNewAnalysis}

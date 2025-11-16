@@ -8,7 +8,7 @@ import CookingMode from './components/CookingMode';
 import ShoppingList from './components/ShoppingList';
 import Sidebar from './components/Sidebar';
 import Spinner from './components/Spinner';
-import { ChefHatIcon } from './components/icons/ChefHatIcon';
+import { RoboChefIcon } from './components/icons/RoboChefIcon';
 import HelpDialog from './components/HelpDialog';
 import { QuestionMarkIcon } from './components/icons/QuestionMarkIcon';
 
@@ -125,7 +125,7 @@ const App: React.FC = () => {
         {currentView === 'recipes' && (
           <div className="h-full">
             <h2 className="text-3xl font-bold mb-4 text-green-400 flex items-center gap-2">
-              <ChefHatIcon />
+              <RoboChefIcon />
               Suggested Recipes
             </h2>
             {isLoading && <div className="flex justify-center items-center h-full"><Spinner /></div>}

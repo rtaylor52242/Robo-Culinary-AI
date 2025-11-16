@@ -3,7 +3,7 @@ import React from 'react';
 import { Recipe } from '../types';
 import { ClockIcon } from './icons/ClockIcon';
 import { FireIcon } from './icons/FireIcon';
-import { ChefHatIcon } from './icons/ChefHatIcon';
+import { RoboChefIcon } from './icons/RoboChefIcon';
 
 interface RecipeCardProps {
   recipe: Recipe;
@@ -46,7 +46,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe, onSelect }) => {
             <span>{recipe.calories} kcal</span>
           </div>
           <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-white text-xs font-semibold ${difficultyColors[recipe.difficulty]}`}>
-            <ChefHatIcon className="w-4 h-4" />
+            <RoboChefIcon className="w-4 h-4" />
             <span>{recipe.difficulty}</span>
           </div>
         </div>

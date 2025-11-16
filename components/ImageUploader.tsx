@@ -53,7 +53,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageUpload, isLoading 
     <div className="flex flex-col items-center justify-center h-full text-center">
       <div className="max-w-2xl">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-300 via-blue-400 to-purple-500 mb-4">
-          Robo Culinary AI
+          Robo AI - Culinary Tool
         </h1>
         <p className="text-lg text-gray-300 mb-8">
           What's for dinner tonight? Snap a photo of your fridge, and let AI be your sous-chef!
